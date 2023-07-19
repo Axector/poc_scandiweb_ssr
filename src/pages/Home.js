@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container } from "react-bootstrap";
 import RandomNumber from "../components/RandomNumber";
+import {useSelector} from "react-redux";
 
 const Home = () => {
+	const text = useSelector(state => state.homeText)
+
 	return (
 		<Container
 			className='d-flex justify-content-center align-items-center'
@@ -14,7 +17,7 @@ const Home = () => {
 			>
 				Homepage
 			</div>
-			<p>Home Text</p>
+			<p>{ text }</p>
 			<RandomNumber/>
 		</Container>
 	);

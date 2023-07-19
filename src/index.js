@@ -7,7 +7,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import { numberReducer } from "./reducers";
 
 const store = configureStore({
-	reducer: numberReducer
+	reducer: numberReducer,
+	preloadedState: window.__INITIAL_STATE__
 })
 
 ReactDOM.hydrateRoot(

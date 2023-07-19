@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container } from "react-bootstrap";
+import {useSelector} from "react-redux";
 
 const About = () => {
+	const text = useSelector(state => state.aboutText)
+
 	return (
 		<Container
 			className='d-flex justify-content-center align-items-center'
@@ -13,7 +16,7 @@ const About = () => {
 			>
 				About
 			</div>
-			<p>About Text</p>
+			<p>{ text }</p>
 		</Container>
 	);
 };

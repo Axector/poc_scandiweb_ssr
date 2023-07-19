@@ -1,6 +1,12 @@
 export const FETCH_RANDOM_NUMBER = 'FETCH_RANDOM_NUMBER'
 
-export const numberReducer = (state = [], action) => {
+const defaultState = {
+    homeText: '',
+    aboutText: '',
+    randomNumber: 0
+}
+
+export const numberReducer = (state = defaultState, action) => {
     switch (action.type) {
         case FETCH_RANDOM_NUMBER:
             return {...state, randomNumber: action.payload}

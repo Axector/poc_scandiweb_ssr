@@ -1,20 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { fetchRandomNumber } from "../http/homeAPI";
 import { Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 const RandomNumber = () => {
-	const [randomNumber, setRandomNumber] = useState(0)
-	const number = useSelector(state => state.randomNumber) ?? 0
+	const number = useSelector(state => state.randomNumber)
 	const dispatch = useDispatch()
-
-	useEffect(() => {
-		updateRandomNumber()
-	}, [])
 
 	const updateRandomNumber = () => {
 		dispatch(fetchRandomNumber())
-		setRandomNumber(number)
 	}
 
 	return (
@@ -28,7 +22,7 @@ const RandomNumber = () => {
 			<h2
 				style={{margin:'20px 0', textAlign:'center'}}
 			>
-				{ randomNumber }
+				{ number }
 			</h2>
 		</Container>
 	);
